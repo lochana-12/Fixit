@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Home Repair Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1> FixIt🛠️</h1>
+            <p>Your Home Repair Task Manager</p>
+            <div class="user-info">
+                <span id="welcomeUser">Welcome, User!</span>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <!-- Add Task Section -->
+            <div class="add-task-section">
+                <h2>Add New Task</h2>
+                <form id="taskForm" class="task-form">
+                    <div class="form-group">
+                        <label for="taskName">Task Name</label>
+                        <input type="text" id="taskName" required placeholder="e.g., Clean AC Filter">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="room">Room/Location</label>
+                        <select id="room" required>
+                            <option value="">Select Room</option>
+                            <option value="living-room">Living Room</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="bedroom">Bedroom</option>
+                            <option value="bathroom">Bathroom</option>
+                            <option value="garage">Garage</option>
+                            <option value="basement">Basement</option>
+                            <option value="attic">Attic</option>
+                            <option value="outdoor">Outdoor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appliance">Appliance/System</label>
+                        <select id="appliance" required>
+                            <option value="">Select Appliance</option>
+                            <option value="ac">Air Conditioning</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="electrical">Electrical</option>
+                            <option value="heating">Heating</option>
+                            <option value="refrigerator">Refrigerator</option>
+                            <option value="dishwasher">Dishwasher</option>
+                            <option value="washer">Washer</option>
+                            <option value="dryer">Dryer</option>
+                            <option value="water-heater">Water Heater</option>
+                            <option value="furnace">Furnace</option>
+                            <option value="general">General Maintenance</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="frequency">Frequency</label>
+                        <select id="frequency" required>
+                            <option value="">Select Frequency</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="semi-annually">Semi-Annually</option>
+                            <option value="annually">Annually</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select id="priority" required>
+                            <option value="">Select Priority</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes (Optional)</label>
+                        <textarea id="notes" placeholder="Additional details about the task..."></textarea>
+                    </div>
+
+                    <button type="submit" class="add-btn">Add Task</button>
+                </form>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <h3>Filter Tasks</h3>
+                <div class="filter-controls">
+                    <select id="filterRoom">
+                        <option value="">All Rooms</option>
+                        <option value="living-room">Living Room</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="bedroom">Bedroom</option>
+                        <option value="bathroom">Bathroom</option>
+                        <option value="garage">Garage</option>
+                        <option value="basement">Basement</option>
+                        <option value="attic">Attic</option>
+                        <option value="outdoor">Outdoor</option>
+                    </select>
+
+                    <select id="filterStatus">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="overdue">Overdue</option>
+                        <option value="completed">Completed</option>
+                    </select>
+
+                    <select id="filterPriority">
+                        <option value="">All Priorities</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tasks List -->
+            <div class="tasks-section">
+                <h2>Your Tasks</h2>
+                <div id="tasksList" class="tasks-list">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Reminders Section -->
+            <div class="reminders-section">
+                <h2>Upcoming Reminders</h2>
+                <div id="remindersList" class="reminders-list">
+                    <!-- Reminders will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
